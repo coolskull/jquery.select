@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/*-----------select-----------*/
+.skull_select {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  background-color: #fff;
+  margin: 10px 5px;
+}
+.skull_select select {
+  position: absolute;
+  z-index: 1;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  padding-left: 10px;
+  border: #dbdbdb 1px solid;
+  border-radius: 3px;
+  display: inline-block;
+  color: #4e5f6f;
+  display: block;
+  font: normal 14px/25px "\5FAE\8F6F\96C5\9ED1", "SimSun", "\5B8B\4F53", "Arial";
+  background: transparent;
+  -webkit-appearance: none;
+}
+.skull_select:after {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  content: "";
+  top: 14px;
+  right: 12px;
+  height: 8px;
+  width: 8px;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  border-top: #01d9b4 1px solid;
+  border-left: #01d9b4 1px solid;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  margin-right: 2px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 3px;
+  margin-bottom: 2px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  width: 2px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}

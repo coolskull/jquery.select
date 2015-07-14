@@ -1,0 +1,9 @@
+######################
+## skull jQuery plugin
+######################
+
+# gulp plugin
+
+/node_modules
+/.idea
+
