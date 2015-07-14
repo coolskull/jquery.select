@@ -8,20 +8,19 @@
             var self = this;
             self._$obj = $obj;
             self._selectId = selectId;
-            self._opts=opts;
+            self._opts = opts;
 
             self.disabledSelect();
-            self.__popup= $skullList = self.createSelect();
+            self._popup = $skullList = self.createSelect();
             self.setPosition();
             $obj.parent().on("click", function () {
                 self.show($(this).attr("skull"));
             });
 
 
-            $("li", $skullList).on("click", function () {
+            $skullList.on("click","li",function () {
                 $(this).siblings("li").removeClass("checked");
                 $(this).addClass("checked");
-
 
                 // select change value
                 var index = $(this).index();
@@ -33,7 +32,7 @@
                 self.hideAll();
             });
 
-            $(window).resize(function(){
+            $(window).resize(function () {
                 self.setPosition();
             });
         },
@@ -43,7 +42,7 @@
             var self = this,
                 $wrapper,
                 $obj = self._$obj,
-                selectId=self._selectId;
+                selectId = self._selectId;
 
             $obj.wrap('<div class="skull_select" skull="' + selectId + '"></div>');
             $wrapper = $obj.parent();
@@ -52,10 +51,10 @@
 
         // create popup html
         createSelect: function () {
-            var self=this,
+            var self = this,
                 html,
                 $obj = self._$obj,
-                selectId=self._selectId;
+                selectId = self._selectId;
 
             var $skullList = $('<div id="skullList' + selectId
                 + '" class="list radio_block skull_list"></div>');
@@ -77,7 +76,7 @@
         },
 
         show: function () {
-            var self=this;
+            var self = this;
             $("#skull_mask").show();
             $(".skull_list").hide();
             $("#skullList" + self._selectId).show();
@@ -85,7 +84,7 @@
         },
 
         changeSelectValue: function (index) {
-            var self=this;
+            var self = this;
             var $select = $(".skull_select[skull=" + self._selectId + "]").find("select");
             $select.find('option').eq(index).prop('selected', true);
             $select.trigger("change");
@@ -96,7 +95,7 @@
             $(".skull_list").hide();
         },
 
-        fixed:function(){
+        fixed: function () {
 
             // maybe should do something here
 
@@ -104,10 +103,10 @@
         },
 
         setPosition: function () {
-            var self=this;
-            var position=self._opts.position;
+            var self = this;
+            var position = self._opts.position;
 
-            switch(position){
+            switch (position) {
                 case "center":
                     self.setCenter();
                     break;
@@ -119,11 +118,11 @@
             }
 
         },
-        setCenter:function(){
-            var self=this;
+        setCenter: function () {
+            var self = this;
             var $window = $(window);
             var $document = $(document);
-            var popup = self.__popup;
+            var popup = self._popup;
             var fixed = this.fixed;
             var dl = fixed ? 0 : $document.scrollLeft();
             var dt = fixed ? 0 : $document.scrollTop();
@@ -136,31 +135,31 @@
             //var style = popup[0].style;
             left = Math.max(parseInt(left), dl);
             top = Math.max(parseInt(top), dt);
-            var maxHeight=wh-50;
-            if(oh>maxHeight){
-                top=top+25;
-                popup.css("maxHeight",maxHeight);
+            var maxHeight = wh - 50;
+            if (oh > maxHeight) {
+                top = top + 25;
+                popup.css("maxHeight", maxHeight);
             }
 
             popup.css({
-                "left":left,
-                "top":top
+                left: left,
+                top: top
             });
 
         },
-        setBottom:function(){
-            var self=this;
-            var popup=self.__popup;
-            var height=200;
+        setBottom: function () {
+            var self = this;
+            var popup = self._popup;
+            var height = 200;
             var oh = popup.height();
             height = Math.min(oh, height);
-            var bottom=0;
-            var left=0;
+            var bottom = 0;
+            var left = 0;
             popup.css({
-                "width":"100%",
-                "height":height,
-                "bottom":bottom,
-                "left":left
+                width: "100%",
+                height: height,
+                bottom: bottom,
+                left: left
             });
         }
     };
@@ -176,7 +175,7 @@
             return this.each(function () {
                 var selectId, $obj;
 
-                if(_count==0){
+                if (_count == 0) {
                     $('body').append('<div id="skull_mask" style="display: none"></div>');
                 }
                 $obj = $(this);
@@ -195,7 +194,7 @@
     }
 
 
-    $.fn.select.defaults = {"position":"center"};
+    $.fn.select.defaults = {"position": "center"};
 
 
 })(jQuery);
