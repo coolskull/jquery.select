@@ -1,8 +1,27 @@
+@import "common/color";
+
 .skull_select {
   position: relative;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  background-color:@mainBg;
+  margin:10px 5px;
   select{
-    position:relative;
+    position:absolute;
     z-index:8;
+    height: 40px;
+    line-height: 40px;
+    width: 80px;
+    padding-left: 10px;
+    border: @borderColor 1px solid;
+    border-radius: 3px;
+    display: inline-block;
+    color: @fontColor;
+    display: block;
+    font: normal 14px/25px "\5FAE\8F6F\96C5\9ED1", "SimSun", "\5B8B\4F53", "Arial";
+    background: transparent;
+    -webkit-appearance: none;
   }
   .skull_select_mask {
     position: absolute;
@@ -13,6 +32,21 @@
     bottom: 0;
     background:rgba(0,0,0,0);
   }
+  &:after {
+    position: absolute;
+    z-index: 0;
+    display: block;
+    content: "";
+    top: 14px;
+    right: 12px;
+    height: 8px;
+    width: 8px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    border-top: @mainColor 1px solid;
+    border-left:@mainColor 1px solid;
+  }
 }
 
 #skull_mask{
@@ -22,7 +56,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:rgba(0,0,0,.1);
+  background:rgba(0,0,0,.2);
 }
 
 .skull_list {
@@ -39,7 +73,7 @@
   }
   li {
     padding: 15px;
-    background:#fff;
+    background:@liColor;
     label {
 
       display: block;
@@ -63,12 +97,12 @@
     }
 
     &.checked {
-      background: #01d9b4;
+      background: @mainColor;
       .icon_radio {
         width: 20px;
         height: 20px;
-        background: #1a98e1;
-        border: #1a98e1 1px solid;
+        background: @radioColor;
+        border: @radioColor 1px solid;
         border-radius: 50%;
         &:after{
           position: absolute;
@@ -100,4 +134,30 @@
       border-bottom-right-radius: 4px;
     }
   }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    margin-right: 2px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: 3px;
+    margin-bottom: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 2px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.25);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
 }
+
+
