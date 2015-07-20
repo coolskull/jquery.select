@@ -17,7 +17,8 @@ usage
 
 
 ### demo  
-    1.[easySelect](https://coolskull.github.io/jquery.select/demo.html)
+
+1.[easySelect](https://coolskull.github.io/jquery.select/demo.html)
 
 
 
