@@ -12,7 +12,10 @@
 
     <script>
         $(function () {
-            $("select").select();
+            $("#selCenter").select();
+            $("#selBottom").select({
+                "position":"bottom"
+            });
         });
     </script>
 
@@ -20,13 +23,13 @@
 <body>
 <h2>select</h2>
 
-    <select>
+    <select id="selCenter">
         <option>厦门</option>
         <option>泉州</option>
         <option>漳州</option>
     </select>
 
-<select>
+<select id="selBottom">
     <option>厦门</option>
     <option>德州</option>
     <option>广州</option>

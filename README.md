@@ -15,3 +15,10 @@ usage
 ### use easily as below:
     $("select").select();
 
+
+### demo  
+
+1.[easySelect](https://coolskull.github.io/jquery.select/demo.html)
+
+
+
